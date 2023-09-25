@@ -12,7 +12,15 @@ This NIP defines an event used to represent scores for players within various ga
 
 A `kind 33334` event is used.
 
-The `content` SHOULD be a stringified number representing the user's score in the game.  The number by default is implicitly denominated in satoshis.  A complex stringified JSON event is reserved for future use and more expressive self-descriptive scoring.
+The `content` SHOULD be a stringified number representing the user's score in the game.  The number by default is implicitly denominated in satoshis.  The content can also be stringifed JSON by category, note that the denomination is converted to satoshis, so you may get 5,000 sats for drinking a glass of water.  More complex data structures are reserved for future use.
+
+```json
+{
+    "steps": 10000,
+    "water": 5000,
+    "work": 20000
+}
+```
 
 The following tags are defined as REQUIRED:
 
